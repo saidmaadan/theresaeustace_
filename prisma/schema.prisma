@@ -1,0 +1,174 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String?   @unique
+  emailVerified DateTime? @map("email_verified")
+  image         String?
+  password      String?
+  role          Role      @default(USER)
+  accounts      Account[]
+  verificationToken VerificationToken?
+  sessions      Session[]
+  comments      Comment[]
+  books         Book[]    @relation("UserBooks") // For tracking user's free books
+      
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+
+  @@map(name: "users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  id        String   @id @default(cuid())
+  token     String   @unique
+  expires   DateTime
+  email     String   @unique
+  user      User     @relation(fields: [email], references: [email], onDelete: Cascade)
+
+  @@map("verification_tokens")
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  email     String
+  token     String   @unique
+  expires   DateTime
+  createdAt DateTime @default(now())
+}
+
+model Book {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  description String?    @db.Text
+  price       Float?
+  amazonLink  String?
+  coverImage  String?
+  bookFile    String?   // For free books (PDF file URL)
+  audioFile   String?   // For generated audio file URL
+  isFree      Boolean   @default(false)
+  isPremium   Boolean   @default(false)
+  isFeatured  Boolean   @default(false)
+  isPublished Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  categoryId  String
+  category    Category     @relation(fields: [categoryId], references: [id])
+  comments    Comment[]
+  users       User[]       @relation("UserBooks") // Users who have access to this book
+}
+
+model Category {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  books       Book[]
+}
+
+model Blog {
+  id            String      @id @default(cuid())
+  title         String
+  content       String?      @db.Text
+  slug          String      @unique
+  featuredImage String?
+  isFeatured    Boolean     @default(false) 
+  isPublished   Boolean     @default(false)
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+
+  // Relations
+  categoryId    String
+  category      BlogCategory @relation(fields: [categoryId], references: [id])
+  // authorId      String
+  // author        User     @relation(fields: [authorId], references: [id])
+}
+
+model BlogCategory {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  slug        String   @unique
+  description String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  blogs       Blog[]
+}
+
+model Comment {
+  id        String    @id @default(cuid())
+  content   String    @db.Text
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  // Relations
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bookId    String
+  book      Book      @relation(fields: [bookId], references: [id], onDelete: Cascade)
+  parentId  String?
+  parent    Comment?  @relation("NestedComments", fields: [parentId], references: [id], onDelete: Cascade)
+  replies   Comment[] @relation("NestedComments")
+}
+
+model Newsletter {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+} 
