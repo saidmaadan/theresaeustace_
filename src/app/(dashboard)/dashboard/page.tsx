@@ -3,12 +3,12 @@ import { auth } from "@/auth";
 import { Metadata } from "next";
 // import { DashboardSidebar } from "@/components/dashboard/sidebar";
 // import { AdminHeader } from "@/components/admin/header";
-import { Separator } from "@/components/ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
+// import { Separator } from "@/components/ui/separator";
+// import {
+//   SidebarInset,
+//   SidebarProvider,
+//   SidebarTrigger,
+// } from "@/components/ui/sidebar"
 
 
 export const metadata: Metadata = {

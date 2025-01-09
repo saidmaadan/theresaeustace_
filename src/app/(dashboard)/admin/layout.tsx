@@ -3,12 +3,12 @@ import { auth } from "@/auth";
 // import { AdminDashboardSidebar } from "@/components/admin/admin-sidebar";
 // import { AdminHeader } from "@/components/admin/header";
 import { Metadata } from "next";
-import { Separator } from "@/components/ui/separator";
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
+// import { Separator } from "@/components/ui/separator";
+// import {
+//   SidebarInset,
+//   SidebarProvider,
+//   SidebarTrigger,
+// } from "@/components/ui/sidebar"
 
 export const metadata: Metadata = {
   title: "Admin Dashboard | Theresa Eustace",

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Home, BookOpenText } from "lucide-react";
+import { Home } from "lucide-react";
 
 export default function AuthLayout({
   children,

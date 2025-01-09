@@ -27,7 +27,7 @@ export default function Privacy() {
             </div>
             <div className="mb-10">
             <h2 className="text-xl mb-4">Cookies</h2>
-            <p className="text-sm mb-6">We use cookies on our website to improve website functionality and user experience. Cookies are small files that are stored on a user's computer or device. They allow us to remember user preferences and provide personalized content. Users can disable cookies in their browser settings, but this may affect website functionality.</p>
+            <p className="text-sm mb-6">We use cookies on our website to improve website functionality and user experience. Cookies are small files that are stored on a user&apos;s computer or device. They allow us to remember user preferences and provide personalized content. Users can disable cookies in their browser settings, but this may affect website functionality.</p>
             </div>
             <div className="mb-10">
             <h2 className="text-xl mb-4">Changes to Privacy Policy</h2>
