@@ -56,6 +56,7 @@ export function ContactForm() {
       toast.success("Message sent successfully! I'll get back to you soon.")
       form.reset()
       
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       toast.error("Failed to send message. Please try again.")
     } finally {

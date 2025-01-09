@@ -4,7 +4,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 // import { NewsletterForm } from "@/components/shared/newsletter-form"
 import NewsletterSignup from "@/components/home/newsletter-footer-c"
-import { Github, Mail, Twitter, Facebook, Instagram, Printer } from 'lucide-react'
+import { Mail, Twitter, Facebook, Instagram, Printer } from 'lucide-react'
 import { siteConfig } from '@/config/site'
 //import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
