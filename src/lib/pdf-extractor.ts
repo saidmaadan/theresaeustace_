@@ -33,12 +33,12 @@ export async function extractTextFromPDF(pdfUrl: string): Promise<string> {
   }
 }
 
-async function streamToBuffer(stream: any): Promise<Buffer> {
-  const chunks: Buffer[] = []
+// async function streamToBuffer(stream: any): Promise<Buffer> {
+//   const chunks: Buffer[] = []
   
-  for await (const chunk of stream) {
-    chunks.push(Buffer.from(chunk))
-  }
+//   for await (const chunk of stream) {
+//     chunks.push(Buffer.from(chunk))
+//   }
   
-  return Buffer.concat(chunks)
-}
+//   return Buffer.concat(chunks)
+// }

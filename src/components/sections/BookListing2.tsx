@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 const books = [
   { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', cover: '/placeholder.svg?height=400&width=300' },
@@ -26,7 +27,13 @@ export default function BookListing() {
             >
               <Card>
                 <CardContent className="p-4">
-                  <img src={book.cover} alt={book.title} className="w-full h-64 object-cover rounded-md mb-4" />
+                  <Image
+                    src={book.cover}
+                    alt={book.title}
+                    width={300}
+                    height={400}
+                    className="w-full h-64 object-cover rounded-md mb-4"
+                  />
                   <h3 className="text-xl font-semibold mb-2">{book.title}</h3>
                   <p className="text-muted-foreground">{book.author}</p>
                 </CardContent>

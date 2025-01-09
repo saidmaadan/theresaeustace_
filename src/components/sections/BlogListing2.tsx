@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 const blogPosts = [
   { id: 1, title: 'Top 10 Summer Reads', excerpt: 'Discover the best books to enjoy this summer...', image: '/placeholder.svg?height=200&width=400' },
@@ -25,7 +26,13 @@ export default function BlogSection() {
             >
               <Card>
                 <CardContent className="p-4">
-                  <img src={post.image} alt={post.title} className="w-full h-48 object-cover rounded-md mb-4" />
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    width={400}
+                    height={200}
+                    className="w-full h-48 object-cover rounded-md mb-4"
+                  />
                   <h3 className="text-xl font-semibold mb-2">{post.title}</h3>
                   <p className="text-muted-foreground mb-4">{post.excerpt}</p>
                 </CardContent>
