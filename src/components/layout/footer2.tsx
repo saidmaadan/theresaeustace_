@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">About Us</h3>
             <p className="text-muted-foreground">
-              We're passionate about connecting readers with their next great book.
+              We&#39;re passionate about connecting readers with their next great book.
             </p>
           </div>
           <div>
