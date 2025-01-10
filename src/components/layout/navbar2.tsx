@@ -84,32 +84,33 @@ export default function Navbar() {
             <Link href="/" className="">
                 <Logo/>
             </Link>
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-3">
                     {/* <ThemeToggle /> */}
                 <Button
                     variant="ghost"
                     size="icon"
+                    className="bg-none hover:bg-none"
                     onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
                 >
                     {theme === 'dark' ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
                 </Button>
-                <div className="flex items-center space-x-3 ">    
+                <div className="flex items-center space-x-4 ">    
                     {routes.map((route) => (
                     <Link
                         key={route.href}
                         href={route.href}
                         className={cn(
-                        'text-sm font-medium text-foreground hover:text-primary transition-colors',
+                        'text-sm font-medium hover:text-primary/90 transition-colors',
                         pathname === route.href
-                            ? 'text-foreground'
-                            : 'text-foreground/60'
+                            ? 'text-foreground/60'
+                            : 'text-foreground/100'
                         )}
                     >
                         {route.label}
                     </Link>
                     ))}
-                    <Button asChild variant="ghost">
-                        <Link href="/books"><BookOpenCheck />Books Store</Link>
+                    <Button asChild variant="ghost" >
+                        <Link href="/books" className="text-foreground"><BookOpenCheck />Books Store</Link>
                     </Button>
                     
                 </div>
