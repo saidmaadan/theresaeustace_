@@ -80,7 +80,7 @@ export default function Navbar() {
             animate={{ y: 0 }}
             transition={{ duration: 0.5 }}
         >
-        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div className="container-center py-4 flex justify-between items-center">
             <Link href="/" className="">
                 <Logo/>
             </Link>

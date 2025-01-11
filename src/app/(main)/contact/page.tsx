@@ -2,7 +2,7 @@ import { ContactForm } from "@/components/contact/contact-form"
 
 export default function ContactPage() {
   return (
-    <div className="container py-20">
+    <div className="container-center py-20 mt-20">
       <div className="mx-auto max-w-2xl space-y-8">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">

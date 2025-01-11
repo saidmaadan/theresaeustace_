@@ -32,7 +32,7 @@ export function Footer() {
 
   return (
     <footer className="border-t bg-background">
-      <div className="container-center py-12">
+      <div className="container-center">
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -130,7 +130,7 @@ export function Footer() {
           </motion.div>
         </div>
         <div className="mt-8 border-t pt-8 text-center">
-          <div className="flex items-center justify-between flex-wrap">
+          <div className="flex items-center justify-between flex-wrap container-center">
             <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} SophiaBent. All rights reserved.
             </p>

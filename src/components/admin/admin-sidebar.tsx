@@ -4,16 +4,7 @@
 import { User } from "@prisma/client";
 
 import {
-    // AudioWaveform,
-    // Bot,
-    // Command,
-    // Frame,
     
-    // Map,
-    // PieChart,
-    // Settings2,
-    // SquareTerminal,
-    // HomeIcon,
     GalleryVerticalEnd,
     BookOpen,
     BookmarkIcon,
@@ -136,7 +127,7 @@ export function AdminDashboardSidebar({ user }: AdminSidebarProps) {
 
   return (
       // <Sidebar collapsible="icon" {...props}>
-    <Sidebar collapsible="icon">
+    <Sidebar collapsible="icon"className="dark:bg-purple-950/30 bg-purple-50">
       <SidebarHeader>
         <NavHeader  />
       </SidebarHeader>

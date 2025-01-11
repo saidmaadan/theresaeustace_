@@ -56,11 +56,11 @@ export function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 bg-card border-r flex flex-col">
+    <aside className="w-64 bg-card border-r flex flex-col ">
       <div className="p-6">
         <Link href="/" className="flex items-center gap-2">
           <HomeIcon className="h-6 w-6" />
-          <span className="font-semibold text-xl">Sophia Bent</span>
+          <span className="font-semibold text-xl">Theresa Eustace</span>
         </Link>
       </div>
       <nav className="flex-1 px-4 space-y-2">

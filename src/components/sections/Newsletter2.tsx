@@ -19,7 +19,7 @@ export default function Newsletter() {
 
   return (
     <section className="py-16 bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4">
+      <div className="container-center">
         <motion.div
           className="max-w-2xl mx-auto text-center"
           initial={{ opacity: 0, y: 20 }}

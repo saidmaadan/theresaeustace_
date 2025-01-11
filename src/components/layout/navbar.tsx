@@ -63,7 +63,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="flex h-16 items-center px-8 md:px-16 lg:px-20 mx-auto">
+      <nav className="flex h-16 items-center container-center">
         <div className="mr-8">
           <Link href="/" className="flex items-center space-x-2">
             <motion.span

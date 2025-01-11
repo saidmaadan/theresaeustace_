@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <motion.div
-          className="w-full h-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-20 dark:opacity-30"
+          className="w-full h-full bg-gradient-to-r from-purple-500 to-pulple-700 opacity-20 dark:opacity-30"
           animate={{
             scale: [1, 1.1, 1],
             rotate: [0, 5, 0],
@@ -60,7 +60,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="container mx-auto px-4 z-10">
+      <div className="container-center z-10">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 20 }}

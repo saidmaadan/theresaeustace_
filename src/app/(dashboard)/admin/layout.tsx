@@ -30,7 +30,7 @@ export default async function AdminLayout({
     <div className="flex h-screen bg-gradient-to-br from-background to-muted/20">
 
       <SidebarProvider>
-        <AdminDashboardSidebar user={session?.user}/>
+        <AdminDashboardSidebar user={session?.user} />
           <SidebarInset>
             <header className="sticky top-0 z-100 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex justify-between h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12 px-4">
                 <div className="flex items-center gap-2 px-4">

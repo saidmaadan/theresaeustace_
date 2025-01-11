@@ -4,6 +4,7 @@ import BookListing from '@/components/sections/BookListing2'
 import BlogSection from '@/components/sections/BlogListing2'
 import Newsletter from '@/components/sections/Newsletter2'
 import CTA from '@/components/sections/CTA'
+import {Newsletter as NewsLetterForm } from "@/components/home/newsletter"
 
 
 export default function MainPage() {
@@ -13,7 +14,8 @@ export default function MainPage() {
       <Hero />
       <BookListing />
       <BlogSection />
-      <Newsletter />
+      <NewsLetterForm />
+      {/* <NewsletterForm/> */}
       <CTA />
      
     </main>

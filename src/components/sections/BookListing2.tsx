@@ -15,7 +15,7 @@ const books = [
 export default function BookListing() {
   return (
     <section className="py-16 bg-muted">
-      <div className="container mx-auto px-4">
+      <div className="container-center">
         <h2 className="text-3xl font-bold mb-8 text-center">Featured Books</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {books.map((book, index) => (
