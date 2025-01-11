@@ -125,6 +125,7 @@ model Blog {
   content       String?      @db.Text
   slug          String      @unique
   featuredImage String?
+  isPremium     Boolean     @default(false)
   isFeatured    Boolean     @default(false) 
   isPublished   Boolean     @default(false)
   createdAt     DateTime    @default(now())
