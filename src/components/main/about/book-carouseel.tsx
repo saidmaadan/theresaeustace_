@@ -85,7 +85,7 @@ const BookCarousel = ({
 
     return (
         <div className="w-full mb-20 mr-20">
-            <div className="flex items-center justify-between mb-4">
+            <div className="container-center flex items-center justify-between mb-4">
               <motion.h2
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}

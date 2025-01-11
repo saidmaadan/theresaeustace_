@@ -12,21 +12,22 @@ export function AboutHeadline() {
     {
       id: 1,
       icon: Users2Icon,
-      title: 'Discover ',
-      description: "Discover why Sophia Bent's stories of Love and Romance captivate readers across the globe",
+      title: 'Introduction',
+      description: "Welcome to Theresa Eustace, your ultimate destination for fitness inspiration and education. Whether you're starting your fitness journey or looking for motivation to keep going, we provide the tools, books, and stories to help you succeed.",
     },
     {
       id: 2,
-      icon: BookOpen,
-      title: 'Warm-Hearted',
-      description: "Lose Yourself in a Love Story with warm-hearted and engaging author.",
+      icon: Users2Icon,
+      title: 'Featured Books ',
+      description: "Explore our curated collection of books designed to empower and guide you on your path to a healthier lifestyle. From workout plans to nutrition guides, we’ve got you covered.",
     },
     {
       id: 3,
       icon: LayoutDashboardIcon,
-      title: 'Romantic love story',
-      description: "Be swept off your feet by this award-winning author's romantic love story.",
+      title: 'Success Stories',
+      description: "Read real-life stories of individuals who transformed their lives from fat to fit. Let their journeys inspire you to take the first step toward your own transformation.",
     },
+    
     
   ];
 
@@ -43,7 +44,7 @@ export function AboutHeadline() {
       >
         {ITEMS.map((item, index) => (
           <div key={index} data-id={`card-${index}`}>
-            <div className='flex select-none flex-col space-y-1 p-4'>
+            <div className='container-center flex select-none flex-col space-y-1'>
               {/* <p className="w-8 h-8 text-primary-foreground">{ item.icon}</p> */}
               <h3 className='text-base font-medium text-zinc-800 dark:text-zinc-50'>
                 {item.title}

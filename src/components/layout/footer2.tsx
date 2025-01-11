@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">About Us</h3>
             <p className="text-sm font-medium text-muted-foreground">
-              We&#39;re passionate about connecting readers with their next great book.
+            To empower individuals through education and inspiration, helping them lead healthier lives by providing access to the best fitness resources and success stories.
             </p>
             <div className="flex space-x-4 mt-6">
               <Link href="https://facebook.com/theresaeustacebook" target='_blank' className="text-muted-foreground hover:text-primary transition-colors">
@@ -55,15 +55,20 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+            <h3 className="text-lg font-semibold mb-4">Join Our Community</h3>
             <NewsletterFooter/>
             
           </div>
         </div>
-        <div className="mt-8 container-center border-t border-gray-700 pt-8 text-center">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} BookStore. All rights reserved.
-          </p>
+        <div className="mt-8 border-t border-gray-700 pt-8 text-center">
+        <div className="flex items-center justify-between flex-wrap">
+            <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Theresa Eustace. All rights reserved.
+            </p>
+            <p className="text-sm text-muted-foreground">
+            Made in Austin, TX & powered by <a href="https://inventivelabs.co" target="_blank">@inventivelabs</a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

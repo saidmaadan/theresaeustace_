@@ -65,9 +65,9 @@ export function NewsletterFooter() {
         className="container "
       >
         <div className="mx-auto max-w-2xl ">
-          <motion.div variants={fadeIn('up')} className="space-y-4">
-            <h3 className="text-sm font-semibold tracking-tighter ">
-            Subscribe to our newsletter
+          <motion.div variants={fadeIn('up')} className="space-y-2">
+            <h3 className="text-sm text-muted-foreground ">
+            Subscribe for Exclusive Content, Discounts, and Updates.
             </h3>
             
           </motion.div>

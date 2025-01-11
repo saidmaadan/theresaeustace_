@@ -24,7 +24,7 @@ export default async function AboutPage() {
   const featuredBooks = await getFeaturedBooks()
 
   return (
-    <div className="container-center flex flex-col">
+    <div className="flex flex-col">
       <AboutHero />
       <AboutHeadline />
       <Suspense fallback={<div>Loading featured books...</div>}>

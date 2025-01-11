@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import Link from "next/link"
 
 export default function Hero() {
   return (
@@ -62,34 +63,44 @@ export default function Hero() {
 
       <div className="container-center z-10">
         <motion.div
-          className="text-center"
+          className="max-w-[900px] text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 text-foreground"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 text-foreground"
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
-            Discover Your Next <span className="text-primary">Great Read</span>
+            <p >Transform Your Life with Empowering Books and Inspiring Stories:</p>
+            <p className="text-primary">From Fat to Fit </p>
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl mb-8 text-muted-foreground"
+            className="text-lg md:text-xl mb-8 text-muted-foreground"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Explore thousands of books from bestselling authors and emerging talents.
+            Discover the best fitness resources, success stories, and actionable advice to help you lead a healthier, happier life from bestselling author and emerging talents.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <Button size="lg" className="text-lg px-8 py-6">
-              Start Exploring
-            </Button>
+            <div className="flex items-center justify-center gap-2 text-center ">
+              <Button asChild size="lg">
+                <Link href="/books">
+                  Start Exploring
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/blog">
+                  Read Blog
+                </Link>
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
       </div>

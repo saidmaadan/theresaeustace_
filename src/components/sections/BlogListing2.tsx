@@ -38,7 +38,7 @@ export default function BlogSection({
   showViewAll = true,
 }: BlogListingProps) {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-accent">
       <div className="container-center">
       <div className="flex items-center justify-between">
           <motion.h2

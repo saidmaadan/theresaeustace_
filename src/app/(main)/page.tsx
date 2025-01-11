@@ -65,16 +65,11 @@ export default async function MainPage() {
       <Suspense fallback={<div>Loading books...</div>}>
         <BookListing />
       </Suspense>
-
+      <CTA />
       <Suspense fallback={<div>Loading blogs...</div>}>
         <BlogSection blogs={latestBlogs} />
       </Suspense>
-      
-      
       <NewsLetterForm />
-      {/* <NewsletterForm/> */}
-      <CTA />
-     
     </main>
   )
 }

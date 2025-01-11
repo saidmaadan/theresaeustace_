@@ -56,7 +56,7 @@ export function Newsletter() {
   }
 
   return (
-    <section className="border-t bg-muted/40">
+    <section className="border-t dark:bg-muted/40 bg-purple-100">
       <motion.div
         variants={staggerContainer}
         initial="initial"
