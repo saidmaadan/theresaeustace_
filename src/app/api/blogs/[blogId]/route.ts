@@ -140,6 +140,7 @@ export async function PATCH(
         categoryId: blogCategoryId || undefined,
         isPublished: isPublished || undefined,        
         isFeatured: isFeatured || undefined,
+        isPremium: isPremium || undefined,
         
       },
       include: {

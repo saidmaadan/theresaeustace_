@@ -12,7 +12,8 @@ export async function GET(req: NextRequest) {
     const category = searchParams.get("category");
     const search = searchParams.get("search");
     const isFeatured = searchParams.get("isFeatured") === "true";
-
+    const isPremium = searchParams.get("isPremium") === "true";
+    
     const skip = (page - 1) * limit;
 
     const where = {
@@ -71,6 +72,7 @@ export async function POST(req: NextRequest) {
       content,
       featuredImage,
       isFeatured,
+      isPremium,
       isPublished,
       categoryId, 
     } = body;
@@ -111,6 +113,7 @@ export async function POST(req: NextRequest) {
         featuredImage,
         categoryId,
         isFeatured: isFeatured || false,
+        isPremium: isPremium || false,
         isPublished: isPublished || false,
         slug,  
       },

@@ -47,6 +47,7 @@ const formSchema = z.object({
   featuredImage: z.string().optional(),
   isPublished: z.boolean().default(false),
   isFeatured: z.boolean().default(false),
+  isPremium: z.boolean().default(false),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -77,6 +78,7 @@ export function BlogDialog({
       content: blog?.content || "",
       isPublished: blog?.isPublished || false,
       isFeatured: blog?.isFeatured || false,
+      isPremium: blog?.isPremium || false,
     },
   });
 
@@ -116,6 +118,7 @@ export function BlogDialog({
         content: "",
         isPublished: false,
         isFeatured: false,
+        isPremium: false,
       });
     } catch (error) {
       toast.error(
@@ -209,7 +212,7 @@ export function BlogDialog({
               />
             </div>
 
-            <div className="grid gap-6 grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               <FormField
                 control={form.control}
                 name="isPublished"
@@ -244,6 +247,28 @@ export function BlogDialog({
                       </FormLabel>
                       <FormDescription>
                         Show this blog post in featured sections
+                      </FormDescription>
+                    </div>
+                    <FormControl>
+                      <Switch
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="isPremium"
+                render={({ field }) => (
+                  <FormItem className="flex items-center justify-between rounded-lg border p-4">
+                    <div className="space-y-0.5">
+                      <FormLabel className="text-base">
+                        Premium
+                      </FormLabel>
+                      <FormDescription>
+                        Show this blog post in Premium sections
                       </FormDescription>
                     </div>
                     <FormControl>
