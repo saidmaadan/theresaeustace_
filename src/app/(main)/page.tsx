@@ -63,7 +63,7 @@ export default async function MainPage() {
       
       <Hero />
       <Suspense fallback={<div>Loading books...</div>}>
-        <BookListing />
+        <BookListing books={featuredBooks}/>
       </Suspense>
       <CTA />
       <Suspense fallback={<div>Loading blogs...</div>}>
