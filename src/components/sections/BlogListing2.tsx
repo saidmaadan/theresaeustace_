@@ -20,6 +20,7 @@ interface BlogPost {
     slug: string
     content?: string | null
     featuredImage?: string | null
+    isPremium: boolean
     createdAt: Date
     category: {
       name: string
@@ -34,7 +35,7 @@ interface BlogListingProps {
 
 export default function BlogSection({
   title = "Latest from Our Blog",
-  blogs = [],
+  blogs,
   showViewAll = true,
 }: BlogListingProps) {
   return (

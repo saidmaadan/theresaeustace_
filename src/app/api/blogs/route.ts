@@ -89,7 +89,7 @@ export async function POST(req: NextRequest) {
 
     if (existingBlog) {
       return NextResponse.json(
-        { message: "Blog with this slug already exists" },
+        { message: "Blog with similar title already exists" },
         { status: 400 }
       );
     }

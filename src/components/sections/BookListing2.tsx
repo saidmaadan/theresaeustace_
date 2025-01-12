@@ -16,8 +16,7 @@ import { SafeHTML } from "@/components/ui/safe-html"
 //   { id: 4, title: 'Pride and Prejudice', author: 'Jane Austen', cover: '/placeholder.svg?height=400&width=300' },
 // ]
 
-interface BookCard {
-  
+interface BookPost {
     id: string
     title: string
     slug: string
@@ -36,7 +35,7 @@ interface BookCard {
 
 interface BookListingProps {
   title?: string
-  books: BookCard[]
+  books: BookPost[]
   showViewAll?: boolean
 }
 
@@ -71,7 +70,7 @@ export default function BookListing({
           )}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {books.map((book, index) => (
+          {books?.map((book, index) => (
             <motion.div
               key={book.id}
               initial={{ opacity: 0, y: 20 }}

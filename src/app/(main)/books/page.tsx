@@ -22,7 +22,7 @@ async function getBooks(searchParams: BooksPageProps["searchParams"]) {
     const params = await searchParams;
     
     const page = Number(params.page) || 1;
-    const perPage = 8;
+    const perPage = 6;
     const skip = (page - 1) * perPage;
 
     const where = {

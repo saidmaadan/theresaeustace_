@@ -22,7 +22,7 @@ async function getBlogs(searchParams: BlogPageProps["searchParams"]) {
     const params = await searchParams;
     
     const page = Number(params.page) || 1;
-    const perPage = 3;
+    const perPage = 6;
     const skip = (page - 1) * perPage;
 
     const where = {

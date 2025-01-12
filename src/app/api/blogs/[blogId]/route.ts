@@ -64,7 +64,7 @@ export async function PATCH(
     }
 
     const body = await req.json();
-    const { title, content, featuredImage, isFeatured, blogCategoryId, isPublished } = body;
+    const { title, content, featuredImage, isFeatured, blogCategoryId, isPublished, isPremium } = body;
 
     // Generate new slug if title is being updated
     let newSlug = currentBlog.slug;
