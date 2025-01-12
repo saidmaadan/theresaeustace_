@@ -138,12 +138,12 @@ export function BlogList({
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem asChild>
+              {/* <DropdownMenuItem asChild>
                 <a href={blog.slug} target="_blank" rel="noopener noreferrer">
                   <Eye className="mr-2 h-4 w-4" />
                   View
                 </a>
-              </DropdownMenuItem>
+              </DropdownMenuItem> */}
               <BlogDialog blog={blog} categories={categories} onSuccess={onSuccess}>
                 <DropdownMenuItem onSelect={(e) => e.preventDefault()}>
                   <Edit className="mr-2 h-4 w-4" />
