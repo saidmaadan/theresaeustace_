@@ -101,7 +101,7 @@ export function DashboardSidebar({ user, ...props }: SidebarProps) {
 
   return (
       // <Sidebar collapsible="icon" {...props}>
-    <Sidebar collapsible="icon" {...props} className="dark:bg-purple-950/60 bg-purple-50">
+    <Sidebar collapsible="icon" {...props} className="dark:bg-purple-950/30 bg-purple-50">
       <SidebarHeader>
         <NavHeader  />
       </SidebarHeader>
