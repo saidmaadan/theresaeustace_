@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
     
 
     // Generate slug from title
-    const slug = slugify(title, { lower: true, strict: true });
+    let slug = slugify(title, { lower: true, strict: true });
 
     // Check if slug is unique
     const existingBlog = await prisma.blog.findUnique({
@@ -88,11 +88,21 @@ export async function POST(req: NextRequest) {
     });
 
     if (existingBlog) {
-      return NextResponse.json(
-        { message: "Blog with similar title already exists" },
-        { status: 400 }
-      );
+      // Create a new slug with date and time if title is taken
+      const now = new Date();
+      const dateTime = now.toISOString()
+        .replace('T', '-')
+        .replace(/\..+/, '')
+        .replace(/:/g, '-');
+      slug = slugify(`${title}-${dateTime}`, { lower: true, strict: true });
     }
+
+    // if (existingBlog) {
+    //   return NextResponse.json(
+    //     { message: "Blog with similar title already exists" },
+    //     { status: 400 }
+    //   );
+    // }
 
     // Verify category exists
     const category = await prisma.blogCategory.findUnique({

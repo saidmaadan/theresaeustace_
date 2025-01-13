@@ -50,7 +50,7 @@ const data = {
             isActive: true,
             items: [
                 {
-                title: "Dashboard",
+                title: "Home",
                 url: "/dashboard",
                 },
                 

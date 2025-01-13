@@ -82,10 +82,13 @@ export async function PATCH(
           },
         });
         if (existingBlog) {
-          return NextResponse.json(
-            { error: "Blog with similar title already exists" },
-            { status: 400 }
-          );
+          // Create a new slug with date and time if title is taken
+          const now = new Date();
+          const dateTime = now.toISOString()
+            .replace('T', '-')
+            .replace(/\..+/, '')
+            .replace(/:/g, '-');
+          newSlug = slugify(`${title}-${dateTime}`, { lower: true, strict: true });
         }
       }
 
@@ -97,38 +100,22 @@ export async function PATCH(
         },
       });
 
+      // if (existingBlog) {
+      //   return NextResponse.json(
+      //     { error: "Blog with this title already exists" },
+      //     { status: 400 }
+      //   );
+      // }
       if (existingBlog) {
-        return NextResponse.json(
-          { error: "Blog with this title already exists" },
-          { status: 400 }
-        );
+        // Create a new slug with date and time if title is taken
+        const now = new Date();
+        const dateTime = now.toISOString()
+          .replace('T', '-')
+          .replace(/\..+/, '')
+          .replace(/:/g, '-');
+        newSlug = slugify(`${title}-${dateTime}`, { lower: true, strict: true });
       }
     }
-
-    // const blog = await prisma.blog.update({
-    //   where: { id: currentBlog.id },
-    //   data: {
-    //     title,
-    //     content,
-    //     featuredImage,
-    //     blogCategoryId,
-    //     isPublished,
-    //     slug: newSlug,
-    //   },
-    //   include: {
-    //     category: true,
-    //     user: {
-    //       select: {
-    //         id: true,
-    //         name: true,
-    //         image: true,
-    //       },
-    //     },
-    //     _count: {
-    //       select: { comments: true },
-    //     },
-    //   },
-    // });
 
     const updatedBlog = await prisma.blog.update({
       where: { id: blogId },

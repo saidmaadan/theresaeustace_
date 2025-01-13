@@ -1,16 +1,12 @@
 "use client"
 
 import * as React from "react"
-import { BookOpenText, HomeIcon } from "lucide-react"
+import { HomeIcon } from "lucide-react"
 import Link from "next/link";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import {
@@ -33,16 +29,15 @@ export function NavHeader(){
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
               <Link href="/" className="flex items-center">
-              <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <HomeIcon className="size-4" />
-              </div>
-              <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">
-                  theresa<span className="font-extrabold">Eustace</span>.com
-                </span>
-                
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                  <HomeIcon className="size-4" />
                 </div>
-                </Link>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-semibold">
+                    theresa<span className="font-extrabold">Eustace</span>.com
+                  </span>
+                </div>
+              </Link>
               {/* <ChevronsUpDown className="ml-auto" /> */}
             </SidebarMenuButton>
           </DropdownMenuTrigger>
