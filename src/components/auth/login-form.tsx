@@ -168,13 +168,17 @@ export const LoginForm = () => {
                 </FormItem>
               )}
             />
-            <Button
-              type="submit"
-              className="w-full"
-              disabled={isPending}
-            >
-              {isPending ? "Signing in..." : "Sign in"}
-            </Button>
+            <div className="flex items-center justify-between flex-wrap">
+              <Link href="/reset" className="text-sm underline underline-offset-4 hover:text-primary">Forgot password?</Link>
+            
+              <Button
+                type="submit"
+                className=""
+                disabled={isPending}
+              >
+                {isPending ? "Signing in..." : "Sign in"}
+              </Button>
+            </div>
           </form>
         </Form>
         <div className="relative">

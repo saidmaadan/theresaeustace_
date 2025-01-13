@@ -9,7 +9,7 @@ export default function AuthLayout({
   return (
     <div className="grid lg:grid-cols-2 min-h-screen">
       {/* Left Column - Marketing/Branding */}
-      <div className="relative hidden lg:flex flex-col bg-pink-900 text-white p-10">
+      <div className="relative hidden lg:flex flex-col bg-purple-900 text-white p-10">
         <div className="relative z-10">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-2xl font-bold"><Home /></span>
@@ -18,12 +18,12 @@ export default function AuthLayout({
         </div>
         <div className="mt-[200px]">
             <h1 className="text-4xl font-bold tracking-tight">
-            Explore my collection of love stories and intimate guides.  
+            Expert advice and actionable tips to help you stay on track.  
               <br />
               
             </h1>
             <p className="mt-4 text-lg text-gray-300">
-            Each book is crafted to transport you to a world where passion reigns and love conquers all. 
+            Join our growing community and take the first step toward a stronger, healthier, and more confident you. Together, we can turn your fitness dreams into reality. 
             </p>
           </div>
         {/* Background gradient effect */}

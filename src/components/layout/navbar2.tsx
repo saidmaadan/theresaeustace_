@@ -197,7 +197,7 @@ export default function Navbar() {
                     key={route.href}
                     href={route.href}
                     className={cn(
-                      'text-lg font-medium transition-colors hover:text-foreground/80',
+                      'text-lg font-medium transition-colors hover:text-foreground/80 pl-4',
                       pathname === route.href
                         ? 'text-foreground'
                         : 'text-foreground/60'
@@ -207,8 +207,8 @@ export default function Navbar() {
                     {route.label}
                   </Link>
                 ))}
-                <Button asChild variant="ghost">
-                    <Link href="/books"><BookOpenCheck />Books Store</Link>
+                <Button asChild variant="ghost" className="flex text-center justify-start">
+                    <Link href="/books" onClick={() => setIsOpen(false)}><BookOpenCheck />Books Store</Link>
                 </Button>
                 <div className="space-y-4">
                   {status === 'loading' ? null : status === 'authenticated' && session?.user ? (
@@ -249,18 +249,18 @@ export default function Navbar() {
                     <>
                       <Button asChild className="w-full flex justify-start">
                         <Link href="/login" onClick={() => setIsOpen(false)}>
-                        <User />Sign-in
+                        <User />Get Started
                         </Link>
                       </Button>
                       
-                      <Button asChild className="w-full">
+                      {/* <Button asChild className="w-full">
                           <Link href="/register" onClick={() => {
                             console.log('Navigating - to /register');
                             setIsOpen(false)
                           }}>
                           Get Started
                         </Link>
-                      </Button>
+                      </Button> */}
                     </>
                   )}
                 </div>
