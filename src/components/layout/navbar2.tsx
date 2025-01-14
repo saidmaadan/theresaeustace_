@@ -2,7 +2,7 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { MoonIcon, SunIcon, Menu, User, BookOpenCheck  } from 'lucide-react'
+import { MoonIcon, SunIcon, Menu, User  } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
@@ -34,10 +34,10 @@ export default function Navbar() {
         href: '/about',
         label: 'About',
         },
-        // {
-        // href: '/books',
-        // label: 'Books',
-        // },
+        {
+        href: '/books',
+        label: 'Books',
+        },
         
         {
         href: '/blog',
@@ -84,7 +84,7 @@ export default function Navbar() {
             <Link href="/" className="">
                 <Logo/>
             </Link>
-            <div className="hidden md:flex items-center space-x-3">
+            <div className="hidden md:flex items-center space-x-4">
                     {/* <ThemeToggle /> */}
                 <Button
                     variant="ghost"
@@ -109,9 +109,7 @@ export default function Navbar() {
                         {route.label}
                     </Link>
                     ))}
-                    <Button asChild variant="ghost" >
-                        <Link href="/books" className="text-foreground"><BookOpenCheck />Books Store</Link>
-                    </Button>
+                    
                     
                 </div>
                 
@@ -170,7 +168,7 @@ export default function Navbar() {
                             console.log('Navigating - to /register');
                             setIsOpen(false)
                           }}>
-                           Get Started
+                           <User />Get Started
                         </Link>
                     </Button>
                     
@@ -207,9 +205,7 @@ export default function Navbar() {
                     {route.label}
                   </Link>
                 ))}
-                <Button asChild variant="ghost" className="flex text-center justify-start">
-                    <Link href="/books" onClick={() => setIsOpen(false)}><BookOpenCheck />Books Store</Link>
-                </Button>
+                
                 <div className="space-y-4">
                   {status === 'loading' ? null : status === 'authenticated' && session?.user ? (
                     <>
